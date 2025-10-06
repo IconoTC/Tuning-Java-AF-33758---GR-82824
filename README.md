@@ -30,6 +30,12 @@
 
 ### Desplegar contenedores
 
+#### Bases de datos
+
+##### MySQL
+
+    docker run -d --name mysql-sakila -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 jamarton/mysql-sakila
+
 #### Testing
 
 ##### Control de calidad
@@ -48,13 +54,13 @@
 
 ### Contenedores efímeros (Comandos)
 
-#### SonarQube Scanner
-
-    docker run --rm -v .:/usr/src -e SONAR_HOST_URL="http://host.docker.internal:9000"  sonarsource/sonar-scanner-cli
-
 #### Maven
 
     docker run --rm -it -v .:/local -v maven-repository:/root/.m2 maven:3.8.6-eclipse-temurin-8 bash
+
+#### SonarQube Scanner
+
+    docker run --rm -v .:/usr/src -e SONAR_HOST_URL="http://host.docker.internal:9000"  sonarsource/sonar-scanner-cli
 
 ## Herramientas de monitorización, perfilado y pruebas
 
