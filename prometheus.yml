@@ -1,0 +1,48 @@
+global:
+  scrape_interval: 1s
+
+scrape_configs:
+  - job_name: 'catalogo-service'
+    metrics_path: '/actuator/prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['host.docker.internal:8010','host.docker.internal:8011','host.docker.internal:8012']
+  - job_name: 'megusta-service'
+    metrics_path: '/actuator/prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['host.docker.internal:8020','host.docker.internal:8021']
+  - job_name: 'async-amqp-emisor'
+    metrics_path: '/actuator/prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['host.docker.internal:8030','host.docker.internal:8031']
+  - job_name: 'async-amqp-receptor'
+    metrics_path: '/actuator/prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['host.docker.internal:8035','host.docker.internal:8036']
+  - job_name: 'rabbitmq-server'
+    metrics_path: '/metrics'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['host.docker.internal:15692']
+  - job_name: cadvisor
+    scrape_interval: 5s
+    static_configs:
+    - targets:
+      - host.docker.internal:9080
+  - job_name: 'jmeter'
+    # metrics_path defaults to '/metrics' scheme defaults to 'http'.
+    static_configs:
+    - targets: ['host.docker.internal:9270']
+  - job_name: 'spring-petclinic'
+    metrics_path: '/actuator/prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['host.docker.internal:8080']
+  - job_name: 'spring-petclinic-rest'
+    metrics_path: '/petclinic/actuator/prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['host.docker.internal:9966']
