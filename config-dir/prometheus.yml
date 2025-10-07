@@ -1,0 +1,18 @@
+global:
+  scrape_interval: 1s
+
+scrape_configs:
+  - job_name: 'jmeter'
+    # metrics_path defaults to '/metrics' scheme defaults to 'http'.
+    static_configs:
+    - targets: ['host.docker.internal:9270']
+  - job_name: 'spring-petclinic'
+    metrics_path: '/actuator/prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['host.docker.internal:8080']
+  - job_name: 'spring-petclinic-rest'
+    metrics_path: '/petclinic/actuator/prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['host.docker.internal:9966']
