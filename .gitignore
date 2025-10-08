@@ -69,3 +69,6 @@ kk/**
 libraries/**
 *.pptx
 **/node_modules/
+
+# Performance Testing
+*.hprof
