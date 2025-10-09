@@ -46,8 +46,8 @@ public class ReferencesTest {
                 Thread.sleep(10);
             }
         } catch (OutOfMemoryError e) {
-            System.err.println("💥 OutOfMemoryError: Heap insuficiente");
-            System.err.println(lista.size() + " objetos");
+            System.out.println("💥 OutOfMemoryError: Heap insuficiente");
+            System.out.println(lista.size() + " objetos");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -63,17 +63,17 @@ public class ReferencesTest {
                 System.out.println("Asignados ~" + (i * 10) + " MB");
                 Thread.sleep(10);
             }
-            System.err.println(lista.size() + " objetos asignados");
+            System.out.println(lista.size() + " objetos asignados");
             int cont = 0;
             for (SoftReference<byte[]> ref : lista) {
                 if (ref.get() != null) {
                     cont++;
                 }
             }
-            System.err.println(cont + " objetos no recolectados");
+            System.out.println(cont + " objetos no recolectados");
         } catch (OutOfMemoryError e) {
-            System.err.println("💥 OutOfMemoryError: Heap insuficiente");
-            System.err.println(lista.size() + " objetos");
+            System.out.println("💥 OutOfMemoryError: Heap insuficiente");
+            System.out.println(lista.size() + " objetos");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -89,17 +89,17 @@ public class ReferencesTest {
                 System.out.println("Asignados ~" + (i * 10) + " MB");
                 Thread.sleep(10);
             }
-            System.err.println(lista.size() + " objetos asignados");
+            System.out.println(lista.size() + " objetos asignados");
             int cont = 0;
             for (WeakReference<byte[]> ref : lista) {
                 if (ref.get() != null) {
                     cont++;
                 }
             }
-            System.err.println(cont + " objetos no recolectados");
+            System.out.println(cont + " objetos no recolectados");
         } catch (OutOfMemoryError e) {
-            System.err.println("💥 OutOfMemoryError: Heap insuficiente");
-            System.err.println(lista.size() + " objetos");
+            System.out.println("💥 OutOfMemoryError: Heap insuficiente");
+            System.out.println(lista.size() + " objetos");
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
