@@ -1,3 +1,7 @@
+### MAT Eclipse Memory Analyzer Tool
 *.index
 *.threads
+*.zip
+
 *.log
+*.log.*

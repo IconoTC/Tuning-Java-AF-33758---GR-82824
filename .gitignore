@@ -72,3 +72,6 @@ libraries/**
 
 # Performance Testing
 *.hprof
+*.log
+*.log.*
+*.gz
