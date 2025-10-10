@@ -3,4 +3,6 @@ dontinline,*.*_avgt_jmhStub
 dontinline,*.*_sample_jmhStub
 dontinline,*.*_ss_jmhStub
 dontinline,*.*_thrpt_jmhStub
-inline,com/example/MyBenchmark.testMethod
+inline,com/example/Int2StringBenchmark.baseline
+inline,com/example/Int2StringBenchmark.testToString
+inline,com/example/Int2StringBenchmark.testValueOf
