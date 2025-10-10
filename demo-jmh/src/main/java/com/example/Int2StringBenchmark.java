@@ -48,11 +48,11 @@ import org.openjdk.jmh.runner.RunnerException;
 import org.openjdk.jmh.runner.options.Options;
 import org.openjdk.jmh.runner.options.OptionsBuilder;
 
-@BenchmarkMode(Mode.Throughput)
-@Warmup(time = 1, timeUnit = TimeUnit.SECONDS, iterations = 1)
-@Measurement(time = 1, timeUnit = TimeUnit.SECONDS, iterations = 5)
+@BenchmarkMode(Mode.All)
+@Warmup(time = 10, timeUnit = TimeUnit.SECONDS, iterations = 2)
+@Measurement(time = 10, timeUnit = TimeUnit.SECONDS, iterations = 5)
 @Fork(2)
-@OutputTimeUnit(TimeUnit.MILLISECONDS)
+@OutputTimeUnit(TimeUnit.MICROSECONDS)
 @State(Scope.Benchmark)
 public class Int2StringBenchmark {
 	@Param({"10", "1234567890"})
@@ -73,11 +73,12 @@ public class Int2StringBenchmark {
     public String testValueOf() {
         return String.valueOf(caso);
     }
+    
     //  $ java -jar target/benchmarks.jar Int2StrBenchmark -rf json
     public static void main(String[] args) throws RunnerException {
         Options opt = new OptionsBuilder()
                 .include(Int2StringBenchmark.class.getSimpleName())
-                .forks(1)
+                .forks(2)
                 .build();
 
         new Runner(opt).run();

@@ -6,3 +6,8 @@ dontinline,*.*_thrpt_jmhStub
 inline,com/example/Int2StringBenchmark.baseline
 inline,com/example/Int2StringBenchmark.testToString
 inline,com/example/Int2StringBenchmark.testValueOf
+inline,com/example/StringBenchmark$StringHelper.repeatWithPlus
+inline,com/example/StringBenchmark.testRepeatWithConcat
+inline,com/example/StringBenchmark.testRepeatWithPlus
+inline,com/example/StringBenchmark.testRepeatWithStringBuffer
+inline,com/example/StringBenchmark.testRepeatWithStringBuilder
